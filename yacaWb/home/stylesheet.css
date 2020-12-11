@@ -1,0 +1,51 @@
+
+a {
+  text-decoration: none;
+}
+
+
+li {
+  list-style: none;
+}
+
+.header_menu{
+  height: 200px;
+  background-color: #63756B;
+}
+
+.header_title{
+  display: flex;
+  font-family: Bold Italic;
+  color: #63756B;
+  font-size: 50px;
+}
+
+.menu {
+  display: flex;
+  font-size: 40px;
+}
+
+.menu li {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.menu li a:hover{
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.header{
+  height: 610px;
+  background-image: url(/yacaWb/yacaImg/yaca_back.jpg);
+  background-size: cover;
+
+}
+
+.site_title {
+  font-family: Bold Italic;
+  color: #63756B;
+  font-size: 50px;
+
+  padding-left: 50px;
+}

@@ -1,0 +1,80 @@
+.loading {
+  top: 0;
+  height: 70px;
+  width: 5%;
+  background-color: red;
+  margin-left: 1%;
+  margin-right: 1%;
+  z-index: 50;
+}
+.wrapper {
+  z-index: 1;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#loadDisplay {
+  display: none;
+  position: fixed;
+  width: 100%;
+}
+
+.load {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.load0 {
+  height: 70px;
+  width: 8px;
+  background-color: black;
+  position: absolute;
+}
+.load01 {
+  left: 34%;
+}
+.load02 {
+  left: 41.5%;
+}
+.load03 {
+  left: 49%;
+}
+.load04 {
+  left: 56.5%;
+}
+.load05 {
+  left: 64%;
+}
+
+#btn {
+  text-align: center;
+}
+
+body {
+  height: 1000px;
+  background-color: gray;
+}
+
+.loadnum {
+  text-align: center;
+}
+
+#bodytext{
+  display: none;
+  text-align: center;
+  top:50%;
+}
+
+.loadphot {
+  text-align: center;
+}
+.iconload {
+  position: absolute;
+  background-color: gray;
+  height: 100px;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+}
