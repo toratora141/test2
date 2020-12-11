@@ -1,0 +1,184 @@
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+   color: #575555;
+   font-family: Bold Italic;
+   font-size: 30px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.top {
+  order: -1;
+  flex: 1 0 100%;
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+}
+
+.header_title{
+  font-family: Bold Italic;
+  color: #63756B;
+  font-size: 40px;
+  padding-left: 20px;
+  padding-top: 1%;
+  flex-basis: 50%;
+  margin: 0;
+}
+
+
+.header_menu {
+  height: 130px;
+  background-color: #0A2006;
+  font-size: 18px;
+}
+
+.menu {
+  display: flex;
+  padding-left: 25%;;
+  justify-content: space-around;
+  flex-basis: 10px;
+}
+
+.menu li {
+  padding-right: 100px;
+  margin: center;
+}
+
+.link {
+  color: #B8D9A7;
+}
+
+.menu li a:hover{
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.header{
+  height: 700px;
+  width: 100%;
+  background-image: url(/yacaWb/yacaImg/yaca_back.jpg);
+  background-size: 100% 700px;
+
+}
+
+.site_title {
+  font-family: Bold Italic;
+  color: #63756B;
+  font-size: 60px;
+  text-align: left;
+  margin: 0;
+}
+
+.alert {
+  margin:0;
+  font-size: 20px;
+}
+
+.main {
+  padding-top: 200px;
+  background-color: #8CA47D;
+}
+
+.yaca_pr {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.yaca_icon {
+  border-radius: 50%;
+  border: 20px solid #2A9245;
+  width: 30%;
+}
+
+.yaca_name {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.yaca_text{
+  font-size: 30px;
+}
+
+.least_sing {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.least_sing_line {
+  font-size: 50px;
+}
+
+.least_sing_title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.leastMovie {
+  padding-bottom: 20px;
+  border-radius: 8px;
+}
+
+
+footer {
+  background-color: #B5CEB5;
+  display: flex;
+  flex-direction: column;
+}
+
+.link_messe {
+  width: 100%;
+  font-size: 30px;
+  color: #575555;
+  font-family: Bold Italic;
+  text-align: center;
+}
+
+.linkbtn {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.linkbtn a {
+  border-radius: 10px;
+  padding: 20px 20px;
+  color: white;
+  font-size: 30px;
+  width: 10%;
+}
+
+.insta_btn {
+  background: linear-gradient(135deg, #5115FB,#FF0606);
+}
+
+.twitter_btn {
+  background-color: #1da1f2;
+}
+
+.youtube_btn {
+  background-color: #ff0000;
+}
