@@ -70,6 +70,8 @@ body {
   background-color: #8CA47D;
   width: 100%;
   margin: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .music_title{
@@ -178,7 +180,8 @@ body {
 
 .reviewBtn {
   cursor: pointer;
-  padding-bottom: 200px;
+  margin-bottom: 200px;
+  display: none;
 }
 
 /* footer */
@@ -213,7 +216,6 @@ footer {
   left: 20%;
   top: 20%;
   width: 60%;
-  height: 50%;
   border-radius: 10px;
   z-index: 101;
 }
