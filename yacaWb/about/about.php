@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="main">
-    <img class="yaca_icon" src="/yaca_test/yacaImg/yaca_icon.jpg">
+    <img class="yaca_icon" src="/yacaWb/yacaImg/yaca_icon.jpg">
     <p class="icon_name container">ワニのヤカ</p>
     <div class="yacaInfo fade-row">
       <p class="info container">現役大学生の頃からサンプリングミュージックを広めるためにvtuberとして活動を開始</p>
