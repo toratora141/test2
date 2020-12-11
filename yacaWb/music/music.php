@@ -67,121 +67,123 @@
             </p>
             <div class="userReviewList" id="userReviewList">aaa</div>
           </div>
-          <p class="reviewBtn" id="reviewBtn">レビューを書く</p>
-          <div class="reviewModal" id="reviewModal">
-            <div class="modal" id="modal">
-              <p class="closeBtn" id="closeBtn">x</p>
-              <p class="modalTitle">レビューをどうぞ</p>
-              <input class="starBtn container" id="starBtn" type="button" value="星を付ける">
-              <div class="stars" id="stars">
-                <?php for ($i = 0; $i < 5; $i++) : ?>
-                  <span class="fa fa-star starSolo starNocolor" id="star">
-                  </span>
-                <?php endfor ?>
-              </div>
-              <textarea class="reviewBody" placeholder="ここにレビューを入力してください"></textarea>
-              <input type="button" value="送信" class="submitBtn container" id="submitBtn">
-            </div>
-          </div>
         </div>
-      <?php endforeach ?>
       </div>
-  </div>
-  <script>
-    $(function() {
-      //ユーザのレビュー表示
-      $('.userReview').click(function() {
-        if ($(this).hasClass('open')) {
-          $(this).find('reviewTitle').html('ユーザーレビュー  +');
-          $(this).find('#userReviewList').slideUp();
-          $(this).removeClass('open');
-        } else {
-          $(this).find('reviewTitle').html('ユーザーレビュー  -');
-          $(this).addClass('open');
-          $(this).find('#userReviewList').slideDown();
-        }
-
-      });
-
-      //レビューモーダルの表示、非表示
-      $('#closeBtn').click(function() {
-        $('#reviewModal').fadeOut();
-        $('#modal').fadeOut();
-      });
-      $('.reviewBtn').click(function() {
-        $('#reviewModal').fadeIn();
-        $('#modal').fadeIn();
-      });
-      //☆ボタンを推したときの処理、
-      $('.starSolo').click(function() {
-        if (!($(this).hasClass('changeStar'))) {
-          $(this).addClass('changeStar').removeClass('starNocolor');
-        } else {
-          $(this).removeClass('changeStar').addClass('starNocolor');
-        }
-      })
-      $('#starBtn').click(function() {
-        $(this).mousedown(function() {
-          $(this).css('box-shadow', '-4px -4px #7C946D');
-        });
-        $('#starBtn').mouseup(function() {
-          $(this).css('box-shadow', '4px 4px #7C946D');
-        });
-        $('#stars').children('.starNocolor').addClass('changeStar').removeClass('starNocolor');
-      });
-      //レビューの送信ボタンの影を消す
-      $('#submitBtn').click(function() {
-        $(this).mousedown(function() {
-          $(this).css('box-shadow', '-4px -4px #63655B');
-        });
-        $(this).mouseup(function() {
-          $(this).css('box-shadow', '4px 4px #63655B');
-        })
-      });
-
-      var effect_btm = 50; // 画面下からどの位置でフェードさせるか(px)
-      var effect_move = 50; // どのぐらい要素を動かすか(px)
-      var effect_time = 1500; // エフェクトの時間(ms) 1秒なら1000
-
-      //親要素と子要素のcssを定義
-      $('.scroll-fade-row').css({
-        opacity: 0
-      });
-      $('.scroll-fade-row').children().each(function() {
-        $(this).css({
-          opacity: 0,
-          transform: 'translateX(' + effect_move + 'px)',
-          transition: effect_time + 'ms'
-        });
-      });
-
-      // スクロールまたはロードするたびに実行
-      $(window).on('scroll load', function() {
-        var scroll_top = $(this).scrollTop();
-        var scroll_btm = scroll_top + $(this).height();
-        var effect_pos = scroll_btm - effect_btm;
-
-        //エフェクトが発動したとき、子要素をずらしてフェードさせる
-        $('.scroll-fade-row').each(function() {
-          var this_pos = $(this).offset().top;
-          if (effect_pos > this_pos) {
-            $(this).css({
-              opacity: 1,
-              transform: 'translateX(0)'
-            });
-            $(this).children().each(function(i) {
-              $(this).delay(100 + i * 500).queue(function() {
-                $(this).css({
-                  opacity: 1,
-                  transform: 'translateX(0)'
-                }).dequeue();
-              });
-            });
+      <p class="reviewBtn" id="reviewBtn">レビューを書く</p>
+      <div class="reviewModal" id="reviewModal">
+        <div class="modal" id="modal">
+          <p class="closeBtn" id="closeBtn">x</p>
+          <p class="modalTitle">レビューをどうぞ</p>
+          <input class="starBtn container" id="starBtn" type="button" value="星を付ける">
+          <div class="stars" id="stars">
+            <?php for ($i = 0; $i < 5; $i++) : ?>
+              <span class="fa fa-star starSolo starNocolor" id="star">
+              </span>
+            <?php endfor ?>
+          </div>
+          <textarea class="reviewBody" placeholder="ここにレビューを入力してください"></textarea>
+          <input type="button" value="送信" class="submitBtn container" id="submitBtn">
+        </div>
+      </div>
+    <?php endforeach ?>
+    <script>
+      $(function() {
+        //ユーザのレビュー表示
+        $('.userReview').click(function() {
+          if ($(this).hasClass('open')) {
+            $(this).find('reviewTitle').html('ユーザーレビュー  +');
+            $(this).find('#userReviewList').slideUp();
+            $(this).removeClass('open');
+          } else {
+            $(this).find('reviewTitle').html('ユーザーレビュー  -');
+            $(this).addClass('open');
+            $(this).find('#userReviewList').slideDown();
           }
+
+        });
+
+        //レビューモーダルの表示、非表示
+        $('#closeBtn').click(function() {
+          $('#reviewModal').fadeOut();
+          $('#modal').fadeOut();
+        });
+        $('.reviewBtn').click(function() {
+          $('#reviewModal').fadeIn();
+          $('#modal').fadeIn();
+        });
+        //☆ボタンを推したときの処理、
+        $('.starSolo').click(function() {
+          if (!($(this).hasClass('changeStar'))) {
+            $(this).addClass('changeStar').removeClass('starNocolor');
+          } else {
+            $(this).removeClass('changeStar').addClass('starNocolor');
+          }
+        })
+        $('#starBtn').click(function() {
+          $(this).mousedown(function() {
+            $(this).css('box-shadow', '-4px -4px #7C946D');
+          });
+          $('#starBtn').mouseup(function() {
+            $(this).css('box-shadow', '4px 4px #7C946D');
+          });
+          $('#stars').children('.starNocolor').addClass('changeStar').removeClass('starNocolor');
+        });
+        //レビューの送信ボタンの影を消す
+        $('#submitBtn').click(function() {
+          $(this).mousedown(function() {
+            $(this).css('box-shadow', '-4px -4px #63655B');
+          });
+          $(this).mouseup(function() {
+            $(this).css('box-shadow', '4px 4px #63655B');
+          })
+        });
+
+        //z-indexを機能させるためにfade-rowから抜いたレビューを書くボタンを一定時間がたってから表示させる
+        $('.reviewBtn').delay(3500).fadeIn();
+
+        var effect_btm = 50; // 画面下からどの位置でフェードさせるか(px)
+        var effect_move = 50; // どのぐらい要素を動かすか(px)
+        var effect_time = 500; // エフェクトの時間(ms) 1秒なら1000
+
+        //親要素と子要素のcssを定義
+        $('.scroll-fade-row').css({
+          opacity: 0
+        });
+        $('.scroll-fade-row').children().each(function() {
+          $(this).css({
+            opacity: 0,
+            transform: 'translateX(' + effect_move + 'px)',
+            transition: effect_time + 'ms'
+          });
+        });
+
+        // スクロールまたはロードするたびに実行
+        $(window).on('scroll load', function() {
+          var scroll_top = $(this).scrollTop();
+          var scroll_btm = scroll_top + $(this).height();
+          var effect_pos = scroll_btm - effect_btm;
+
+          //エフェクトが発動したとき、子要素をずらしてフェードさせる
+          $('.scroll-fade-row').each(function() {
+            var this_pos = $(this).offset().top;
+            if (effect_pos > this_pos) {
+              $(this).css({
+                opacity: 1,
+                transform: 'translateX(0)'
+              });
+              $(this).children().each(function(i) {
+                $(this).delay(100 + i * 500).queue(function() {
+                  $(this).css({
+                    opacity: 1,
+                    transform: 'translateX(0)'
+                  }).dequeue();
+                });
+              });
+            }
+          });
         });
       });
-    });
-  </script>
+    </script>
 </body>
 
 <footer>
